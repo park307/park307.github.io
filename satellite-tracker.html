@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Tracker Project | Sungjin Park</title>
+    <style>
+        /* Reusing core styles for consistency */
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1f2937;
+            --light-bg: #f9fafb;
+            --text-main: #374151;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background-color: white;
+        }
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .logo { font-weight: bold; font-size: 1.2rem; color: var(--dark-color); text-decoration: none; }
+        .back-link { text-decoration: none; color: var(--primary-color); font-weight: 500; }
+        
+        header { padding: 60px 5%; text-align: center; background: var(--light-bg); }
+        header h1 { font-size: 2.5rem; color: var(--dark-color); margin-bottom: 10px; }
+        
+        .content-container { max-width: 900px; margin: 0 auto; padding: 60px 5%; }
+        
+        .detail-section { margin-bottom: 60px; }
+        .detail-section h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--dark-color); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .detail-section h3 { font-size: 1.4rem; margin: 25px 0 15px; color: var(--dark-color); }
+        .detail-section ul { margin-left: 20px; margin-bottom: 20px; color: #4b5563; }
+        .detail-section li { margin-bottom: 8px; }
+        
+        .detail-media {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: #eee;
+        }
+        .detail-media img, .detail-media video { width: 100%; display: block; }
+        
+        .description { font-size: 1.1rem; color: #4b5563; }
+        
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+        .tech-tag { 
+            background: #eff6ff; 
+            color: var(--primary-color); 
+            padding: 8px 16px; 
+            border-radius: 50px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+        }
+
+        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #9ca3af; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">PARK307</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <header>
+        <h1>Satellite Tracker Project</h1>
+        <p>Motion, Interaction, and UI/UX Design</p>
+    </header>
+
+    <div class="content-container">
+        
+        <div class="detail-section">
+            <h2>Project Video Demo</h2>
+            <div class="detail-media">
+                <video controls autoplay loop muted playsinline>
+                    <source src="videos/Adobe Express - IMG_3077.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p class="description">A demonstration of my technical work using motion and interaction.</p>
+        </div>
+
+        <div class="detail-section">
+            <h2>Project Requirements & Capabilities</h2>
+            <p class="description">
+                The primary goal of this project was to design and build a 2-axis satellite tracker capable of autonomously tracking low-earth orbit satellites.
+            </p>
+            <h3>Functional Capabilities</h3>
+            <ul>
+                <li><strong>Real-time Tracking:</strong> Adjusts azimuth and elevation in real-time based on TLE data.</li>
+                <li><strong>Autonomous Operation:</strong> Operates independently once coordinates are uploaded.</li>
+                <li><strong>High Precision:</strong> Utilizes stepper motors with micro-stepping for precise pointing accuracy.</li>
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h2>System Architecture</h2>
+            <p class="description">The system is divided into three main subsystems: The Mechanical Structure, The Control Electronics, and The Software Interface.</p>
+            <div class="detail-media">
+                <!-- Placeholder for Block Diagram -->
+                <img src="https://via.placeholder.com/800x400?text=System+Block+Diagram" alt="System Block Diagram">
+            </div>
+        </div>
+
+        <div class="detail-section">
+            <h2>Mechanical Design & Assembly</h2>
+            <div class="detail-media">
+                <img src="images/IMG_3097.jpg" alt="Project Screenshot">
+            </div>
+            <h3>Design Choices</h3>
+            <p class="description">
+                The structure was designed in Solidworks and fully 3D printed. A key design choice was the use of a balanced gimbal mechanism to minimize the torque required by the elevation motor.
+            </p>
+            <h3>Assembly & Parts</h3>
+            <p class="description">The assembly features custom-designed gears and bearing mounts to ensure smooth rotation under load.</p>
+        </div>
+
+        <div class="detail-section">
+            <h2>Electronics & Wiring</h2>
+            <p class="description">The electronics stack consists of an Arduino microcontroller driving two stepper drivers.</p>
+            <div class="detail-media">
+                <!-- Placeholder for Wiring Diagram -->
+                <img src="https://via.placeholder.com/800x400?text=Wiring+Diagram+Placeholder" alt="Wiring Diagram">
+            </div>
+            <p class="description">Cable management was handled through the hollow center shaft to prevent tangling during 360-degree rotation.</p>
+        </div>
+
+        <div class="detail-section">
+            <h2>Technologies Used</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Solidworks</span>
+                <span class="tech-tag">C++ / Arduino</span>
+                <span class="tech-tag">3D Printing</span>
+                <span class="tech-tag">Electronics</span>
+                <span class="tech-tag">Stepper Motors</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer><p>&copy; 2026 Sungjin Park. Hosted on GitHub Pages.</p></footer>
+</body>
+</html>
