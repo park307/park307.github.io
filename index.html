@@ -1,144 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sungjin Park | Portfolio</title>
-    <style>
-        /* --- CSS STYLING --- */
-        :root {
-            --primary-color: #2563eb; /* Modern Blue */
-            --dark-color: #1f2937;
-            --light-bg: #f9fafb;
-            --text-main: #374151;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-main); 
-            background-color: white;
-        }
-
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .logo { font-weight: bold; font-size: 1.2rem; color: var(--dark-color); text-decoration: none; }
-
-        .nav-links { display: flex; align-items: center; }
-
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        header {
-            padding: 80px 5%;
-            text-align: center;
-            background: var(--light-bg);
-        }
-
-        header h1 { font-size: 3rem; color: var(--dark-color); margin-bottom: 10px; }
-        header p { font-size: 1.2rem; color: #6b7280; }
-
-        /* Projects Section */
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 5%; }
-        h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-
-        .project-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-        }
-
-        .project-card { 
-            background: white;
-            border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid #e5e7eb;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
-        }
-
-        /* Media Handling (Images and Videos) */
-        .media-container {
-            width: 100%;
-            height: 220px;
-            background: #eee;
-            overflow: hidden;
-        }
-
-        .media-container img, .media-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures media fills the square nicely */
-        }
-
-        .project-info { padding: 20px; }
-        .project-info h3 { margin-bottom: 10px; color: var(--dark-color); }
-        .project-info p { font-size: 0.95rem; color: #4b5563; }
-
-        /* Contact Section */
-        #contact { text-align: center; background: var(--dark-color); color: white; padding: 60px 5%; }
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #9ca3af; }
-        .social-links { margin-top: 15px; }
-        .social-icon { width: 24px; height: 24px; fill: currentColor; transition: color 0.3s; color: #9ca3af; }
-        .social-icon:hover { color: #0077b5; }
-        nav .social-icon { color: var(--text-main); }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <nav>
-        <a href="#" class="logo">PARK307</a>
+        <a href="#" class="logo">SUNGJIN PARK</a>
         <div class="nav-links">
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            <a href="https://www.linkedin.com/in/sungjin-park-99111a199/" target="_blank" aria-label="LinkedIn" style="display: flex;">
-                <svg class="social-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="#" onclick="openCVModal(); return false;">CV</a>
+            <a href="https://www.linkedin.com/in/sungjin-park-99111a199/" target="_blank" aria-label="LinkedIn"
+                style="display: flex;">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
             </a>
         </div>
     </nav>
 
-    <header>
-        <h1>Sungjin Park</h1>
-        <p>Developer & Creative | Built with Git & HTML</p>
-    </header>
+    <main class="bento-container">
+        <section class="profile-card">
+            <div class="profile-pic-wrapper">
+                <img src="images/pumpkin.jpg" alt="Sungjin Park" class="profile-pic">
+            </div>
+            <h1>Sungjin Park</h1>
+            <p class="subtitle">Aerospace Engineer</p>
+            
+        </section>
+
+        <section class="info-content">
+            <div class="bio-tile">
+                <h2 class="tagline">Turning CAD designs into code-driven reality.</h2>
+                <p class="bio-text">
+                    I’m an engineer and developer who loves building physical things that think. 
+                    My work spans from 3D-printed mechanical assemblies to embedded control systems.
+                </p>
+            </div>
+
+            <div class="education-grid">
+                <div class="edu-card">
+                    <h3>Education</h3>
+                    <p>University of Illinois at Urbana-Champaign</p>
+                    <span>B.S. in Aerospace Engineering</span>
+                    <p></p>
+                    <span>M.S. in Aerospace Engineering (Expected 2026)</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="container" id="projects">
         <h2>My Work</h2>
         <div class="project-grid">
-            
+
             <a href="satellite-tracker.html" class="project-card" style="text-decoration: none; color: inherit;">
                 <div class="media-container">
                     <video autoplay loop muted playsinline>
@@ -174,10 +96,37 @@
         <p>&copy; 2026 Sungjin Park. Hosted on GitHub Pages.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sungjin-park-99111a199/" target="_blank" aria-label="LinkedIn">
-                <svg class="social-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
             </a>
         </div>
     </footer>
 
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCVModal()">&times;</span>
+            <iframe src="documents/Sungjin_Park_Resume.pdf" class="pdf-frame" title="Resume Preview"></iframe>
+            <a href="documents/Sungjin_Park_Resume.pdf" download="Sungjin_Park_Resume.pdf" class="download-btn">Download
+                Resume</a>
+        </div>
+    </div>
+
+    <script>
+        function openCVModal() {
+            document.getElementById("cvModal").style.display = "block";
+        }
+        function closeCVModal() {
+            document.getElementById("cvModal").style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("cvModal")) {
+                closeCVModal();
+            }
+        }
+    </script>
 </body>
+
 </html>

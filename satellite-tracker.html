@@ -90,6 +90,38 @@
         .social-icon { width: 24px; height: 24px; fill: currentColor; transition: color 0.3s; color: #9ca3af; }
         .social-icon:hover { color: #0077b5; }
         nav .social-icon { color: var(--text-main); }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.5); 
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5vh auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; 
+            max-width: 800px;
+            height: 90vh;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .close-modal { color: #aaa; align-self: flex-end; font-size: 28px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+        .close-modal:hover { color: black; }
+        .pdf-frame { flex-grow: 1; width: 100%; border: none; margin-bottom: 15px; background: #eee; }
+        .download-btn { align-self: center; background: var(--primary-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .download-btn:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -98,6 +130,7 @@
         <a href="index.html" class="logo">PARK307</a>
         <div style="display: flex; align-items: center; gap: 20px;">
             <a href="index.html" class="back-link">← Back to Home</a>
+            <a href="#" onclick="openCVModal(); return false;" style="text-decoration: none; color: var(--text-main); font-weight: 500;">CV</a>
             <a href="https://www.linkedin.com/in/sungjin-park-99111a199/" target="_blank" aria-label="LinkedIn" style="display: flex;">
                 <svg class="social-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
@@ -200,6 +233,15 @@
         </div>
     </footer>
 
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCVModal()">&times;</span>
+            <iframe src="documents/Sungjin_Park_Resume.pdf" class="pdf-frame" title="Resume Preview"></iframe>
+            <a href="documents/Sungjin_Park_Resume.pdf" download="Sungjin_Park_Resume.pdf" class="download-btn">Download Resume</a>
+        </div>
+    </div>
+
     <script>
         let slideIndex = 1;
         
@@ -221,6 +263,19 @@
             }
             slides[slideIndex-1].style.display = "block";
             slides[slideIndex-1].classList.add("active");
+        }
+
+        // Modal Logic
+        function openCVModal() {
+            document.getElementById("cvModal").style.display = "block";
+        }
+        function closeCVModal() {
+            document.getElementById("cvModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("cvModal")) {
+                closeCVModal();
+            }
         }
     </script>
 </body>
